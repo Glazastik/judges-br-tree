@@ -7,9 +7,9 @@ class JudgesController < ApplicationController
   def create
     @judge = Judge.new(judge_params)
     if @judge.save
-      redirect_to :root, notice: 'Juiz criado'
+      redirect_to :root, notice: 'Judge successfully added'
     else
-      flash[:error] = "Erro ao criar Juiz"
+      flash[:error] = "Error while addind judge"
       render 'new'
     end
   end

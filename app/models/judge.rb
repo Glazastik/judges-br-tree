@@ -10,20 +10,20 @@ class Judge
 
   validates_presence_of :name, :level
 
-  LEVEL_WORDS = {"1" => "one", "2" => "two", "3" => "three", "4" => "four", "5" => "five", "Inativo" => "inativo", "Emeritus" => "emeritus"}
+  LEVEL_WORDS = {"1" => "one", "2" => "two", "3" => "three", "4" => "four", "5" => "five", "Inactive" => "inactive", "Emeritus" => "emeritus"}
   
   def self.levels
-    ["1", "2", "3", "4", "5", "Inativo", "Emeritus"]
+    ["1", "2", "3", "4", "5", "Inactive", "Emeritus"]
   end
 
   def level_to_word
     LEVEL_WORDS[level]
   end
   def level_output
-    if level == "Inativo" || level == "Emeritus"
+    if level == "Inactive" || level == "Emeritus"
       level
     else
-      "Nível #{level}"
+      "Level #{level}"
     end
   end
   def name_output

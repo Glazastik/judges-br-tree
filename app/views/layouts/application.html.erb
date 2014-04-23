@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Árvore Genealógica Juízes Magic Brasil</title>
+  <title>Nordic Judge Genealogy</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-  <meta property="og:title" content="Árvore Genealógica Juízes Magic Brasil"/>
+  <meta property="og:title" content="Nordic Judge Genealogy"/>
   <meta property="og:url" content="<%=root_url%>"/>
-  <meta property="og:site_name" content="Juízes Magic Brasil"/>
+  <meta property="og:site_name" content="Nordic Judges"/>
   <meta property="og:image" content="<%=asset_url('tree.jpg') %>"/>
-  <meta property="og:description" content="A árvore genealógica de todos os juízes de Magic da comunidade brasileira."/>
+  <meta property="og:description" content="A site for keeping track on the Nordic Judge Genealogy"/>
   <%= csrf_meta_tags %>
   <style>
   table{border-collapse: initial !important;}
@@ -60,7 +60,7 @@
     <div class="container-fluid">
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
-        <%=link_to "Juízes Magic Brasil", root_path, class:'navbar-brand' %>
+        <%=link_to "Nordic Judges", root_path, class:'navbar-brand' %>
       </div>
 
       <!-- Collect the nav links, forms, and other content for toggling -->
@@ -68,15 +68,15 @@
         <% if user_signed_in? %>
         <ul class="nav navbar-nav">
           <li>
-            <%=link_to "Novo Juiz", new_judge_path%>
+            <%=link_to "New Judge", new_judge_path%>
           </li>
           <li>
-            <%=link_to "Juízes", judges_path%>
+            <%=link_to "Judges", judges_path%>
           </li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <li>
-            <%=link_to "Sair", destroy_user_session_path, method: :delete %>
+            <%=link_to "Log out", destroy_user_session_path, method: :delete %>
           </li>
         </ul>
         <% end %>

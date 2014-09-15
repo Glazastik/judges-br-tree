@@ -3,7 +3,7 @@ class Judge
 
   field :name
   field :level
-  field :country, default: 'br'
+  field :country, default: 'se'
 
   has_many :child_judges, :class_name => 'Judge', inverse_of: :parent_judge
   belongs_to :parent_judge, :class_name => 'Judge', inverse_of: :child_judges
@@ -36,7 +36,7 @@ class Judge
     end
   end
   def country_output
-    unless country.downcase == "br"
+    unless country.downcase == "bnoper"
       "<div class='flag flag-#{country.downcase}' title='#{IsoCountryCodes.find(country).name}'></div>"
     end
   end

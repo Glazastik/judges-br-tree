@@ -43,7 +43,7 @@ JudgesBrFamilyTree::Application.configure do
   # config.force_ssl = true
 
   # Set to :debug to see everything in the log.
-  config.log_level = :info
+  config.log_level = :warn
 
   # Prepend all log lines with the following tags.
   # config.log_tags = [ :subdomain, :uuid ]
@@ -77,4 +77,19 @@ JudgesBrFamilyTree::Application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
+
+#compermisos changes
+  config.logger = Logger.new(STDOUT)
+  #config.action_mailer.default_url_options = { :host => 'mtgjudges-centroamerica.heroku.com' }
+  config.action_mailer.default_url_options = { :host => ENV['MAILER_URL'] }
+  #mail config
+  ActionMailer::Base.smtp_settings = {
+  :address        => 'smtp.sendgrid.net',
+  :port           => '587',
+  :authentication => :plain,
+  :user_name      => ENV['SENDGRID_USERNAME'],
+  :password       => ENV['SENDGRID_PASSWORD'],
+  :domain         => 'heroku.com',
+  :enable_starttls_auto => true
+}
 end
